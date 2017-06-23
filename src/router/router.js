@@ -1,6 +1,13 @@
 import App from '../App'
 
-const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
+//lasy load
+/*
+* two way for lasy load
+*/
+//const balance = r => require.ensure([], () => r(require('../page/balance/balance')), 'balance')
+import balance from '../page/balance';
+import home from '../page/home';
+//const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
 const city = r => require.ensure([], () => r(require('../page/city/city')), 'city')
 const msite = r => require.ensure([], () => r(require('../page/msite/msite')), 'msite')
 const search = r => require.ensure([], () => r(require('../page/search/search')), 'search')
@@ -31,7 +38,6 @@ const setusername = r => require.ensure([], () => r(require('../page/profile/chi
 const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
 const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
 const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')), 'addDetail')
-const balance = r => require.ensure([], () => r(require('../page/balance/balance')), 'balance')
 const balanceDetail = r => require.ensure([], () => r(require('../page/balance/children/detail')), 'balanceDetail')
 const benefit = r => require.ensure([], () => r(require('../page/benefit/benefit')), 'benefit')
 const coupon = r => require.ensure([], () => r(require('../page/benefit/children/coupon')), 'coupon')
@@ -72,7 +78,7 @@ export default [{
         {
             path: '/msite',
             component: msite,
-            meta: { keepAlive: true },
+            meta: { keepAlive: true }, //路由元信息
         },
         //特色商铺列表页
         {

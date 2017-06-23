@@ -83,6 +83,7 @@
              * 如果没有则新增，如果有则不做重复储存，判断完成后进入下一页
              */
             nextpage(index, geohash){
+                console.log(geohash);
                 let history = getStore('placeHistory');
                 let choosePlace = this.placelist[index];
                 if (history) {
